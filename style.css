@@ -1,0 +1,78 @@
+*{
+    box-sizing: border-box;
+    -ms-overflow-style: none;
+    scrollbar-width: none; 
+}
+*::-webkit-scrollbar {
+    display: none;
+  }
+/*corpo inteiro*/
+body{
+    background-color: #E5E5E5;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+}
+/*topo*/
+header{
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 22px;
+    background-color: #FFFFFF;
+    height: 12%;
+    width: 100%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+}
+main{
+    margin: 24% 0;
+}
+
+/*caixa de mensagem*/
+li{
+    width: 100%;
+    min-height: 40px;
+    padding: 13px 8px;
+    margin-bottom: 4px;
+    border-radius: 2px;
+    line-height: 20px;
+    background-color: #FFFFFF;
+}
+/*mensagem de status(entrou/saiu)*/
+li .status{
+    background-color: #DCDCDC;
+}
+/*mensagem secreta*/
+li .reservada{
+    background-color: #FFDEDE;
+}
+/*barra inferior*/
+footer{
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 17px;
+    background-color: #FFFFFF;
+    height: 12%;
+    width: 100%;
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
+}
+/*icone na barra inferior*/
+footer ion-icon{
+    font-size: 26px;
+}
+/*espaço de digitação*/
+input{
+    border: none;
+    color: #000000;
+    font-size: 18px;
+}
+/*texto quando nada esta digitado*/
+input::placeholder{
+    font-style: italic;
+}
