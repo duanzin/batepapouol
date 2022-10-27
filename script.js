@@ -68,11 +68,11 @@ function enviar() {
         type: "message"
     };
     axios.post('https://mock-api.driven.com.br/api/v6/uol/messages',msg);
-    renderizarmensagens();
+    pegarmensagens();
 }
 function manter(){
     axios.post('https://mock-api.driven.com.br/api/v6/uol/status',usuario);
 }
 insiranome();
-setInterval(renderizarmensagens, 3000);
+setInterval(pegarmensagens, 3000);
 setInterval(manter, 5000);
