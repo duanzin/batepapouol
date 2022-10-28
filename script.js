@@ -74,6 +74,7 @@ function enviar() {
     
     const aparece = document.querySelector("ul");
     aparece.lastElementChild.scrollIntoView();
+    document.querySelector("input").value = '';
 }
 function manter(){
     axios.post('https://mock-api.driven.com.br/api/v6/uol/status',usuario);
