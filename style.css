@@ -3,6 +3,7 @@
     -ms-overflow-style: none;
     scrollbar-width: none; 
 }
+/*remove a barra de rolagem mas mantem a funcionalidade*/
 *::-webkit-scrollbar {
     display: none;
   }
@@ -26,6 +27,9 @@ header{
     height: 12%;
     width: 100%;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+}
+header ion-icon{
+    font-size: 42px;
 }
 main{
     margin: 24% 0;
@@ -54,6 +58,14 @@ li.status{
 /*mensagem secreta*/
 li.reservada{
     background-color: #FFDEDE;
+}
+/*bota o texto em negrito*/
+span.bold {
+    font-weight: 700;
+}
+/*bota o texto em cinza*/
+span.cinza{
+    color: #AAAAAA;
 }
 /*barra inferior*/
 footer{
@@ -84,4 +96,5 @@ input{
 /*texto quando nada esta digitado*/
 input::placeholder{
     font-style: italic;
+    opacity: 1;
 }

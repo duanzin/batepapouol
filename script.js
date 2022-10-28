@@ -12,16 +12,18 @@ function insiranome(){
 let info = []; //contem as informaçoes das mensagens da api
 
 function pegarmensagens(){
+
     //pede informaçoes das mensagens da api
     const promessa = axios.get('https://mock-api.driven.com.br/api/v6/uol/messages');
     //chama a função que colocara as mensagens da api dentro de info
     promessa.then(respostaChegou);
+    
 }
 function respostaChegou(resposta){
-    //atribui as mensagens a array info
-    info = resposta.data;
     
+    info = resposta.data;//atribui as mensagens a array info
     renderizarmensagens();//imprime as mensagens
+
 }
 function renderizarmensagens(){
 
@@ -38,21 +40,21 @@ function renderizarmensagens(){
             case 'message':
             chat.innerHTML += `
                 <li>
-                    ${mensagem.time} ${mensagem.from} para ${mensagem.to}: ${mensagem.text}
+                    <span class="cinza">(${mensagem.time})</span> &nbsp <span class="bold">${mensagem.from}</span> &nbsppara&nbsp <span class="bold">${mensagem.to}</span>: ${mensagem.text}
                 </li>`;
             break;
             case 'status':
             //imprime mensagens de entrada/saida
             chat.innerHTML += `
                 <li class = "status">
-                    ${mensagem.time} ${mensagem.from} ${mensagem.text}
+                <span class="cinza">(${mensagem.time})</span> &nbsp <span class="bold">${mensagem.from}</span> &nbsp${mensagem.text}
                 </li>`;
             break;
             case 'private_message':
             //imprime mensagens para um usuario especifico
             chat.innerHTML += `
                 <li class = "reservada">
-                    ${mensagem.time} ${mensagem.from} reservadamente para ${mensagem.to}: ${mensagem.text}
+                <span class="cinza">(${mensagem.time})</span> &nbsp <span class="bold">${mensagem.from}</span> &nbspreservadamente para&nbsp <span class="bold">${mensagem.to}</span>: ${mensagem.text}
                 </li>`;
             break;
         }
@@ -67,8 +69,11 @@ function enviar() {
         text: texto,
         type: "message"
     };
-    axios.post('https://mock-api.driven.com.br/api/v6/uol/messages',msg);
-    pegarmensagens();
+    const mandar = axios.post('https://mock-api.driven.com.br/api/v6/uol/messages',msg);
+    mandar.then(pegarmensagens);
+    
+    const aparece = document.querySelector("ul");
+    aparece.lastElementChild.scrollIntoView();
 }
 function manter(){
     axios.post('https://mock-api.driven.com.br/api/v6/uol/status',usuario);

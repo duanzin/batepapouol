@@ -16,13 +16,14 @@
 <body>
     <header>
         <img src="logo 1.png" alt="logo"/>
+        <ion-icon name="people"></ion-icon>
     </header>
     <main>
         <ul>
         </ul>
     </main>
     <footer>
-        <input id="meuinput" type="text" placeholder="Escreva aqui..."/>
+        <input id="meuinput" type="text" placeholder="Escreva aqui..." onkeydown = "if (event.keyCode == 13) enviar()"/>
         <ion-icon name="paper-plane-outline" onclick="enviar()"></ion-icon>
     </footer>
     
